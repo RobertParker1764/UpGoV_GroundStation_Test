@@ -1,7 +1,7 @@
 // UpGoV Ground Station Test
-// Version: 1.0.3
+// Version: 1.0.4
 // Author: Jonah Parker
-// Date: 12/14/2023
+// Date: 01/17/2024
 
 
 /// ==============================  Include Files  ==================================
@@ -10,7 +10,7 @@
 #include <SPI.h>                      // Radio communications serial bus
 
 // ===============================  Constants  =====================================
-const char* VERSION = "1.0.3";
+const char* VERSION = "1.0.4";
 const uint8_t RADIO_SPI_CS = 8;
 const uint8_t RADIO_SPI_IRQ = 3;
 const double RF95_FREQ = 915.0;
@@ -105,7 +105,54 @@ void setup() {
 
   Serial.println("Sending first message");
   sendRadioMessage("MS:MSG 1", GROUND_STATION_ADDR);
-  delay(5000);
+  delay(1000);
+  sendRadioMessage("MS:MSG 2", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("MS:MSG 3", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("MS:MSG 4", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("MS:MSG 5", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("MS:MSG 6", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ST:FAULT", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ST:READY", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ST:ARMED", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ST:LOGGING", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ST:POST_FLIGHT", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("AL:1,000", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("AC:10", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("DU:120", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("ER:BAT_LOW", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B1:FULL", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B1:OK  ", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B1:LOW ", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B1:POOR", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B1:LOW", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B2:FULL", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B2:OK  ", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B2:LOW ", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B2:POOR", GROUND_STATION_ADDR);
+  delay(1000);
+  sendRadioMessage("B2:LOW", GROUND_STATION_ADDR);
 }
 
 
